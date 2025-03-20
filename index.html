@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>在线购物实验</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        .product { display: inline-block; margin: 20px; padding: 10px; border: 1px solid #ddd; }
+        .product img { width: 150px; height: 150px; }
+        .summary { display: none; padding: 10px; background-color: #f9f9f9; margin-top: 10px; }
+    </style>
+</head>
+<body>
+
+    <h2>请选择商品并查看详情</h2>
+
+    <div id="product-list">
+        <div class="product">
+            <img src="product1.jpg" alt="商品1">
+            <p>商品1 - 无绳电锯</p>
+            <button onclick="showSummary(1)">查看详情</button>
+            <div class="summary" id="summary-1">
+                <p>AI 评价摘要：用户认为这款电锯动力强劲，电池续航不错，但稍微有些重。</p>
+            </div>
+        </div>
+
+        <div class="product">
+            <img src="product2.jpg" alt="商品2">
+            <p>商品2 - 6" 随机轨道打磨机</p>
+            <button onclick="showSummary(2)">查看详情</button>
+            <div class="summary" id="summary-2">
+                <p>AI 评价摘要：用户称其打磨效果均匀，低震动设计很舒适，但长时间使用会发热。</p>
+            </div>
+        </div>
+    </div>
+
+    <br><br>
+    <button onclick="goToSurvey()">完成购物，填写问卷</button>
+
+    <script>
+        function showSummary(id) {
+            let summary = document.getElementById("summary-" + id);
+            summary.style.display = summary.style.display === "none" ? "block" : "none";
+        }
+
+        function goToSurvey() {
+            window.location.href = "survey.html"; // 跳转至问卷页面
+        }
+    </script>
+
+</body>
+</html>
